@@ -1,4 +1,4 @@
 autoClean.txt is the data set. 
 Data set is described at - https://archive.ics.uci.edu/ml/datasets/auto+mpg
-Linear regressino task.
+Linear regression task.
 knnimpute library will most probably need to be instaled via pip, conda etc
