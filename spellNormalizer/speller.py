@@ -27,7 +27,7 @@ def makeTable(fileName,floor,ceiling):
     
     return createHash(fileName,floor,ceiling)
 
-table = makeTable('1-1000.txt',1,11) # 1-1000.txt included. txt files with csv data or newline seperated date should work.
+#table = makeTable('1-1000.txt',1,11) # 1-1000.txt included. txt files with csv data or newline seperated date should work.
 # this above line is needed to create the table/hashtable passed to the spellerCorrected function	
 
 def spellerCorrected(table,word):
@@ -72,5 +72,5 @@ def spellerCorrected(table,word):
     return fullCorrect(word) # print out the corrected word.
 	
 	
-print(spellerCorrected(table,'realy'))
+#print(spellerCorrected(table,'realy'))
 # test output, output for this is early as really is not in the 1-1000.txt file.
