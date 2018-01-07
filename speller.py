@@ -13,12 +13,15 @@ def correction(word):
 def candidates(word): 
         "Generate possible spelling corrections for word."
         #return (known([word]) or (known(edits1(word)).union(known(edits2(word)))).union(known(edits3(word))) or [word])
+        speller = pickle.load( open(parent + '\\resources\\models\\spellcorrectHashtable.p') )
         length = len(word)
         floor = (length - 3) - 1
         if(floor<0):
             floor = 0
         ceiling = (length + 3) 
-        speller = pickle.load( open( parent + '\\resources\\models\\spellcorrectHashtable.p', "rb" ) )
+        if(ceiling > len(speller)):
+            ceiling = len(speller)
+            floor = len(speller) - 3
         x = speller[floor:ceiling]
         candidates = []
         for i in x:
@@ -27,7 +30,7 @@ def candidates(word):
 
         if (word in candidates):
             return word
-    
+        print candidates
         return candidates
 def fullCorrect(s):
         sentence = s.lower().split()
