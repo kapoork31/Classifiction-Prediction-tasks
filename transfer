@@ -1,0 +1,6 @@
+The classifierProperties.py file is present in the classes file also. This contains the list of services and the mapping from integer to service as the classifier returns an integer and not a string. 
+The classifierjsonreturn.py is the actual file which is run which is called by the java component. This file calls in multiple classes from the classes folder which work together to form the message returned to the java component following a message from a user. 
+The classes folder contains multiple python files 
+
+
+The classifierjsonreturn.py is the actual file running which is called by the java component. This file as explained above calls the python files in the classes folder. What this file does is it runs the classifier.py and the chatscriptclient.py class as services. Firstly when a message is sent by the user it is sent to the classifier.py class which will return a json object. This json is then returned to java. When the users/java component talks with the bot on chatscript, these messages are sent to the chatscriptClient.py service which sends the message to chatscript and returns the response back to the user. Alongside a single thread is run separately which runs a loop that will call the update.py and the updateScripts.py to run at certain times of the day. These times are defined in the properties.py file. 
